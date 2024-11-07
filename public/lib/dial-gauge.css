@@ -1,0 +1,27 @@
+/* Dial Gauge web component CSS variables and their default values. */
+
+dial-gauge {
+    /* Element */
+    --dg-background-color: #ffffff;
+    --dg-display: inline-block;
+    --dg-height: 243px;
+    --dg-margin: 0;
+    --dg-width: 243px;
+    --dg-z-index: 0;
+
+    --dg-title-color: #194A82;
+    --dg-title-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --dg-title-font-size: 1.5em;
+
+    --dg-arc-background-color: #DBDDF2;
+    --dg-arc-color: #194A82;
+    --dg-arc-width: 10;
+
+    --dg-numeric-color: #194A82;
+    --dg-numeric-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --dg-numeric-font-size: 2.5em;
+
+    --dg-subtitle-color: #194A82;
+    --dg-subtitle-font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --dg-subtitle-font-size: 1em;
+}

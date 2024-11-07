@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewerController!{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        background-image: linear-gradient(to left, #ffffff, #eff0fc, #dbe2fa, #c2d5f7, #a4caf4);
+        color: #194A82;
+        font-size:30px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .slogan {
+        text-transform: uppercase;
+        background-color: white;
+        border-radius: 10px;
+        width: 1472px;
+        margin: 20px;
+    }
+
+    .gauges {
+        display: flex;
+        text-align: center;
+        text-transform: uppercase;
+        font-size:20px;
+        margin-top: 15px;
+    }
+    .gauges .card {
+        margin-right: 20px;
+    }
+    .card {
+        background-color: #EFF8FD;
+        border-radius: 30px;
+        border: 1px solid #EFF8FD;
+    }
+
+    .title-card {
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+    .production {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .production .card {
+        display: flex !important;
+        text-align: center;
+        margin-right: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="text-center poppins-light">
+        <img src="/images/{{ customer.logo }}" width="300" /><br />
+        Nous sommes fiers de vous informer que notre point de vente fonctionne avec <span class="poppins-semibold"><b>une énergie 100% renouvelable</b></span>.
+        Grâce à notre installation photovoltaïque, nous utilisons une <span class="poppins-semibold"><b>énergie propre et durable</b></span>, respectueuse de l'environnement.
+    </div>
+    <div class="text-center slogan">
+        Ensemble, faisons un pas vers un avenir plus responsable
+    </div>
+    <div class="text-center mt-2">
+        Service fourni par Kovea : {{ urlSite }}
+    </div>
+
+    <section>
+        <div class="gauges">
+            <div class="card card-body">
+                <dial-gauge main-title="&nbsp;" sub-title="kw/h" scale-start="0" scale-end="100" scale-offset="0" value="{{ data.production }}">
+                </dial-gauge>
+                <span class="title-card">PRODUCTION INSTANTANéE</span>
+            </div>
+            <div class="card card-body">
+                <dial-gauge main-title="&nbsp;" sub-title="tonnes" scale-start="0" scale-end="100" scale-offset="0" value="{{ data.co2 }}">
+                </dial-gauge>
+                <span class="title-card">CO2 évité</span>
+            </div>
+            <div class="card card-body text-center">
+                <img src="/images/threes.png" style="width: 181px;margin-left: 130px;margin-top:10px;margin-bottom:10px;"/>
+                <span style="font-size:2.5em;">{{ data.threes }}</span>
+                <span class="title-card">Equivalent arbres plantés</span>
+            </div>
+        </div>
+        <div class="production">
+            <div class="card card-body">
+                <span><b>{{ data.productionDay }} kwh</b> <span class="title-card" style="margin-left: 30px;">Energie du jour</span></span>
+            </div>
+            <div class="card card-body">
+                <span><b>{{ data.productionTotal }} kwh</b> <span class="title-card" style="margin-left: 30px;">Production totale</span></span>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
