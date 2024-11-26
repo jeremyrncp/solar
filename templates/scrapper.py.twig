@@ -22,7 +22,7 @@ energyTotal = stats.energy_kwh
 
 # Calculate tree and CO2
 co2Tonne = round(energyToday * 238 / 1000)
-threes = round(co2Tonne * 1000 / 25)
+threes = round(co2Tonne * 100 / 25)
 
 payload = {'createdAt': date, 'production': currentPower, 'productionDay': energyToday, 'productionTotal': energyTotal, 'co2': co2Tonne, 'threes': threes, 'customer': customerId}
 r = requests.post("{{ clientAPI }}", data=payload)
