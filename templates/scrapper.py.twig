@@ -21,7 +21,7 @@ energyToday = stats.energy_today_kwh
 energyTotal = stats.energy_kwh
 
 # Calculate tree and CO2
-co2Tonne = round(energyTotal * 238 / 1000 / 1000)
+co2Tonne = round(energyToday * 238 / 1000)
 threes = round(co2Tonne * 1000 / 25)
 
 payload = {'createdAt': date, 'production': currentPower, 'productionDay': energyToday, 'productionTotal': energyTotal, 'co2': co2Tonne, 'threes': threes, 'customer': customerId}
